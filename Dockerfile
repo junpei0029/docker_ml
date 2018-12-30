@@ -1,19 +1,45 @@
-FROM nvidia/cuda:8.0-cudnn6-runtime
+FROM ubuntu
 
-RUN apt-get update
-RUN apt-get install -y curl git unzip imagemagick bzip2
-RUN git clone git://github.com/yyuu/pyenv.git .pyenv
+RUN mkdir /v
 
-WORKDIR /
-ENV HOME  /
-ENV PYENV_ROOT /.pyenv
-ENV PATH $PYENV_ROOT/shims:$PYENV_ROOT/bin:$PATH
+RUN apt-get update \
+&& apt-get install -y --no-install-recommends \
+build-essential \
+curl \
+git \
+graphviz \
+&& rm -rf /var/lib/apt/lists/*
 
-RUN pyenv install anaconda3-4.4.0
-RUN pyenv global anaconda3-4.4.0
-RUN pyenv rehash
+RUN apt-get update \
+&& apt-get install -y software-properties-common \
+&& add-apt-repository ppa:neovim-ppa/stable \
+&& apt-get install -y --no-install-recommends \
+neovim
 
-RUN pip install opencv-python tqdm h5py keras tensorflow-gpu kaggle-cli gym
-RUN pip install chainer
-RUN pip install http://download.pytorch.org/whl/cu80/torch-0.2.0.post3-cp36-cp36m-manylinux1_x86_64.whl 
-RUN pip install torchvision
+RUN curl -qsSLkO \
+https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-`uname -p`.sh \
+&& bash Miniconda3-latest-Linux-`uname -p`.sh -b \
+&& rm Miniconda3-latest-Linux-`uname -p`.sh
+
+ENV PATH=/root/miniconda3/bin:$PATH
+
+RUN conda install -y \
+h5py \
+pandas \
+keras \
+tensorflow \
+scikit-learn \
+pydot \
+jupyter \
+matplotlib \
+seaborn \
+py-xgboost \
+lightgbm \
+&& conda clean --yes --tarballs --packages --source-cache
+
+VOLUME /v
+WORKDIR /v
+EXPOSE 8888
+CMD jupyter notebook --no-browser --ip=0.0.0.0 --allow-root --NotebookApp.token= --NotebookApp.allow_origin='*'
+
+
