@@ -35,6 +35,7 @@ matplotlib \
 seaborn \
 py-xgboost \
 lightgbm \
+dask \
 && conda clean --yes --tarballs --packages --source-cache
 
 VOLUME /v
