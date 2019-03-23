@@ -1,0 +1,32 @@
+# 内容
+
+機械学習用Ubuntu環境
+
+利用できるパッケージは以下
+* miniconda
+* h5py
+* pandas
+* keras
+* tensorflow
+* scikit-learn
+* pydot
+* jupyter
+* matplotlib
+* seaborn
+* py-xgboost
+* lightgbm
+
+## 使い方
+
+### ソースダウンロード
+git clone https://github.com/junpei0029/docker_ml.git
+
+
+### docker build
+docker build . -t junpei0029/ml-base
+
+### docker run
+docker run -d -p 8888:8888 -e KERAS_BACKEND=tensorflow -v 作業ディレクトリ:/v junpei0029/ml-base
+
+### jupyter notebookを開く
+http://localhost:8888/
