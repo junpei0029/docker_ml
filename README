@@ -27,7 +27,7 @@ git clone https://github.com/junpei0029/docker_ml.git
 docker build . -t junpei0029/ml-base
 
 ### docker run
-docker run -d -p 8888:8888 -e KERAS_BACKEND=tensorflow -v=$(pwd):$(pwd) junpei0029/ml-base
+docker run -d -p 8888:8888 -e KERAS_BACKEND=tensorflow -v=$(pwd):/v junpei0029/ml-base
 
 ### jupyter notebookを開く
 http://localhost:8888/
