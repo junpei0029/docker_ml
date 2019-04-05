@@ -1,7 +1,5 @@
 FROM ubuntu
 
-RUN mkdir /v
-
 RUN apt-get update \
 && apt-get install -y --no-install-recommends \
 build-essential \
@@ -38,8 +36,6 @@ lightgbm \
 dask \
 && conda clean --yes --tarballs --packages --source-cache
 
-VOLUME /v
-WORKDIR /v
 EXPOSE 8888
 CMD jupyter notebook --no-browser --ip=0.0.0.0 --allow-root --NotebookApp.token= --NotebookApp.allow_origin='*'
 
