@@ -2,6 +2,8 @@
 
 機械学習用Ubuntu環境
 
+Ubuntu18.04LTS
+
 利用できるパッケージは以下
 * miniconda
 * h5py
