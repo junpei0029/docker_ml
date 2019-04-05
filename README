@@ -18,6 +18,7 @@ Ubuntu18.04LTS
 * py-xgboost
 * lightgbm
 * dask
+* opencv
 
 ## 使い方
 

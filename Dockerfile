@@ -8,6 +8,7 @@ build-essential \
 curl \
 git \
 graphviz \
+libgl1-mesa-dev \
 && rm -rf /var/lib/apt/lists/*
 
 RUN apt-get update \
@@ -36,6 +37,7 @@ seaborn \
 py-xgboost \
 lightgbm \
 dask \
+opencv \
 && conda clean --yes --tarballs --packages --source-cache
 
 VOLUME /v
