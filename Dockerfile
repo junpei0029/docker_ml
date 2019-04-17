@@ -38,6 +38,7 @@ py-xgboost \
 lightgbm \
 dask \
 opencv \
+category_encoders \
 && conda clean --yes --tarballs --packages --source-cache
 
 VOLUME /v

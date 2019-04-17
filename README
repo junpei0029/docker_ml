@@ -19,6 +19,7 @@ Ubuntu18.04LTS
 * lightgbm
 * dask
 * opencv
+* category_encoders
 
 ## 使い方
 
