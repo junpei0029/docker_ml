@@ -38,8 +38,9 @@ py-xgboost \
 lightgbm \
 dask \
 opencv \
-category_encoders \
 && conda clean --yes --tarballs --packages --source-cache
+
+RUN conda install -c conda-forge category_encoders
 
 VOLUME /v
 WORKDIR /v
