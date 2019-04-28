@@ -20,7 +20,8 @@ Ubuntu18.04LTS
 * dask
 * opencv
 * category_encoders
-
+* pandas-profiling
+* pixiedust
 ## 使い方
 
 ### ソースダウンロード

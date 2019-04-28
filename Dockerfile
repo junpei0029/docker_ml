@@ -40,7 +40,8 @@ dask \
 opencv \
 && conda clean --yes --tarballs --packages --source-cache
 
-RUN conda install -c conda-forge category_encoders
+RUN conda install -c conda-forge category_encoders pandas-profiling
+RUN pip install pixiedust
 
 VOLUME /v
 WORKDIR /v
