@@ -38,9 +38,10 @@ py-xgboost \
 lightgbm \
 dask \
 opencv \
+pandas-profiling \
 && conda clean --yes --tarballs --packages --source-cache
 
-RUN conda install -c conda-forge category_encoders pandas-profiling
+RUN conda install -c conda-forge category_encoders
 RUN pip install pixiedust
 
 VOLUME /v
