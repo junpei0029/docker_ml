@@ -22,6 +22,7 @@ Ubuntu18.04LTS
 * category_encoders
 * pandas-profiling
 * pixiedust
+* beautifulsoup4
 ## 使い方
 
 ### ソースダウンロード

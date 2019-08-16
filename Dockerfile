@@ -39,6 +39,8 @@ lightgbm \
 dask \
 opencv \
 pandas-profiling \
+pivottablejs \
+beautifulsoup4 \
 && conda clean --yes --tarballs --packages --source-cache
 
 RUN conda install -c conda-forge category_encoders
