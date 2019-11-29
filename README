@@ -23,6 +23,7 @@ Ubuntu18.04LTS
 * pandas-profiling
 * pixiedust
 * beautifulsoup4
+* jupyter_contrib_nbextensions
 ## 使い方
 
 ### ソースダウンロード

@@ -43,7 +43,7 @@ pivottablejs \
 beautifulsoup4 \
 && conda clean --yes --tarballs --packages --source-cache
 
-RUN conda install -c conda-forge category_encoders
+RUN conda install -c conda-forge category_encoders jupyter_contrib_nbextensions
 RUN pip install pixiedust
 
 VOLUME /v
